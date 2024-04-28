@@ -5,9 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "start": "ts-node src/app.ts",
+    "start": "node dist/app.js",
+    "start:dev": "ts-node src/app.ts",
     "build": "tsc",
-    "serve": "node dist/app.js"
+    "postinstall": "npm run build",
+    "serve": "node dist/app.js",
+    "deploy": "eb deploy"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +22,7 @@
     "jest": "^29.7.0",
     "supertest": "^7.0.0",
     "ts-jest": "^29.1.2",
+    "ts-node": "^10.9.2",
     "typescript": "^5.4.5"
   },
   "dependencies": {
