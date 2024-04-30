@@ -14,9 +14,9 @@ app.use(bodyParser.json());
 
 app.use(
   cors({
-    origin: "http://localhost:3001", // Allow only this origin to access
-    methods: "GET,HEAD,PUT,PATCH,POST,DELETE", // Ensure methods match what the frontend uses
-    credentials: false, // Explicitly set credentials to false
+    origin: "*",
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    credentials: false,
   })
 );
 
