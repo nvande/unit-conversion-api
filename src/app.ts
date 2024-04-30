@@ -1,10 +1,10 @@
-import express, { Request, Response } from 'express';
+import express from 'express';
+import routes from './routes/routes';
 
 const app = express();
 
-app.get('/', (req: Request, res: Response): void => {
-    res.status(200).send('Hello World!');
-});
+app.use(express.json());
+app.use('/', routes);
 
 if (require.main === module) {
     const port: number = parseInt(process.env.PORT as string, 10) || 3000;

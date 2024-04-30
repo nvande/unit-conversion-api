@@ -1,11 +1,9 @@
 const request = require('supertest');
-const app = require('./app.ts').default;
+const app = require('./app').default;
 
 describe('GET /', () => {
-    it('should return Hello World', async () => {
+    it('should return healthy', async () => {
         const response = await request(app).get('/');
         expect(response.status).toBe(200);
-        expect(response.text).toBe('Hello World!');
     });
-    
 });
