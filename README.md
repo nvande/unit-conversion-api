@@ -30,7 +30,7 @@ To get a conversion, the following body format is required:
 }, ... ]
 ```
 
-The API will also accept a single request in the body as an object.
+The API will also accept a single request in the body as an object, so you can easily test it with Postman etc with the x-www-form-urlencoded option with the above keys.
 
 After converting, the response will take the following format:
 ```
