@@ -10,7 +10,7 @@ describe("GET /", () => {
 
 describe("POST /convert", () => {
   it("should validate a correct request", async () => {
-    const response = await request(app).post("/convert").send({
+    const response = await request(app).post("/api/v1/convert").send({
       inputValue: 100,
       inputUnit: "celsius",
       targetUnit: "fahrenheit",
@@ -21,7 +21,7 @@ describe("POST /convert", () => {
   });
 
   it("should return an error for missing required fields", async () => {
-    const response = await request(app).post("/convert").send({
+    const response = await request(app).post("/api/v1/convert").send({
       inputUnit: "celsius",
       targetUnit: "fahrenheit",
     });
@@ -37,7 +37,7 @@ describe("POST /convert", () => {
   });
 
   it("should return an error for invalid units", async () => {
-    const response = await request(app).post("/convert").send({
+    const response = await request(app).post("/api/v1/convert").send({
       inputValue: 100,
       inputUnit: "degrees",
       targetUnit: "fahrenheit",
