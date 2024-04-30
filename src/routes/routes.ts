@@ -5,7 +5,7 @@ import { validateConversionRequest } from "../validation/conversionValidation";
 
 const router = express.Router();
 
-router.get("/", (req: Request, res: Response) => {
+router.get("/", (_req: Request, res: Response) => {
   res.status(200).send("Unit Conversion API");
 });
 
