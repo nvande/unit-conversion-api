@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import ConversionRequest from "../dto/ConversionRequest.dto";
 import ConversionResponse from "../dto/ConversionResponse.dto";
-import { convert, gradeResponse } from "../services/ConversionService";
+import { convert, gradeAnswer } from "../services/ConversionService";
 
 import { GradeStatus } from "../models/ConversionTypes";
 
@@ -17,7 +17,7 @@ export const convertAndGradeUnits = async (req: Request, res: Response) => {
     let gradeStatus: GradeStatus | undefined;
 
     if (conversionReq.studentAnswer !== undefined) {
-      const isCorrect = gradeResponse(
+      const isCorrect = gradeAnswer(
         convertedValue,
         Number(conversionReq.studentAnswer)
       );

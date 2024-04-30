@@ -18,11 +18,15 @@ function convert(value: number, inputUnit: Unit, targetUnit: Unit): number {
   throw new Error("Unsupported or mismatched unit conversion types");
 }
 
-function gradeResponse(value: number, response: number): boolean {
-  const roundedValue = Number(value.toFixed(1));
-  const roundedResponse = Number(response.toFixed(1));
+function gradeAnswer(value: number, answer: number): boolean {
+  const roundedValue = toTenths(value);
+  const roundedAnswer = toTenths(answer);
 
-  return roundedValue === roundedResponse;
+  return roundedValue === roundedAnswer;
 }
 
-export { convert, gradeResponse };
+function toTenths(value: number): number {
+    return Math.round(10*value)/10;  
+}
+
+export { convert, gradeAnswer };
