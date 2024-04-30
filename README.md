@@ -10,7 +10,7 @@ To get started, download the repo and in a terminal window run either:
 - `npm run start:dev` to launch the application in Dev (Typescript) mode,
 - or run `npm run build` to compile the Typescript into Javascript and then run `npm run start` to launch the build
 
-Once the application is running locally, it will serve requests at localhost:3000/convert
+Once the application is running locally, it will serve requests at localhost:3000/api/v1/convert
 
 ## Running tests
 
@@ -74,5 +74,5 @@ Unit = TemperatureUnit | VolumeUnit;
 1. Add support for more conversion types. Currently, the given set of supported conversions and units make the application only useful within a very narrow set of possible assignments.
 2. Add database for saving student information. Currently, all of the student information is stored on the front end and the API has no database capabilities. Adding support for user accounts and saved classroom student lists and assignment templates could enable a user to save even more time when grading assignments.
 3. Purchase a unique backend URL and assign an SSL certificate. As it is, the backend only supports HTTP via AWS Elastic Beanstalk and purchasing a unique domain would enable true HTTPS support on the backend.
-4. Improve API usability by providing a better experience in the browser on how to use the API if you hit the API home route. Come up with better API routing scheme, ie, /api/v1/convert and support for potentially other useful endpoints.
+4. Improve API usability by providing a better experience in the browser on how to use the API if you hit the API home route.
 5. Complete test coverage for the front end of the application. Minor refactoring of front end to support futher development. More testing for potential UI hiccups on the front end.
