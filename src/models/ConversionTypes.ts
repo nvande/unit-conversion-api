@@ -1,11 +1,20 @@
-export type TemperatureUnit = "kelvin" | "celsius" | "fahrenheit" | "rankine";
-export type VolumeUnit =
-  | "liters"
-  | "tablespoons"
-  | "cubic-inches"
-  | "cups"
-  | "cubic-feet"
-  | "gallons";
-export type ResponseStatus = "correct" | "incorrect" | "invalid";
+export enum TemperatureUnit {
+  Kelvin = "kelvin",
+  Celsius = "celsius",
+  Fahrenheit = "fahrenheit",
+  Rankine = "rankine",
+}
+
+export enum VolumeUnit {
+  Liters = "liters",
+  Tablespoons = "tablespoons",
+  CubicInches = "cubicInches",
+  Cups = "cups",
+  CubicFeet = "cubicFeet",
+  Gallons = "gallons",
+}
+
+export type GradeStatus = "correct" | "incorrect" | "invalid";
+export type ResponseStatus = "success" | "error";
+
 export type Unit = TemperatureUnit | VolumeUnit;
-export type Status = "success" | "error";

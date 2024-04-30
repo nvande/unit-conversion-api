@@ -1,28 +1,23 @@
-/**
- * Converts temperatures between Kelvin, Celsius, Fahrenheit, and Rankine.
- * @param {number} value - The temperature value to convert.
- * @param {string} fromUnit - The unit of the input temperature.
- * @param {string} toUnit - The unit for the output temperature.
- * @return {number} - The converted temperature value.
- */
+import { TemperatureUnit, VolumeUnit } from "../models/ConversionTypes";
+
 export const convertTemperature = (
   value: number,
-  fromUnit: string,
-  toUnit: string
+  fromUnit: TemperatureUnit,
+  toUnit: TemperatureUnit
 ): number => {
   let celsius: number;
 
   switch (fromUnit) {
-    case "fahrenheit":
+    case TemperatureUnit.Fahrenheit:
       celsius = (value - 32) * (5 / 9);
       break;
-    case "kelvin":
+    case TemperatureUnit.Kelvin:
       celsius = value - 273.15;
       break;
-    case "rankine":
+    case TemperatureUnit.Rankine:
       celsius = (value - 491.67) * (5 / 9);
       break;
-    case "celsius":
+    case TemperatureUnit.Celsius:
       celsius = value;
       break;
     default:
@@ -30,71 +25,63 @@ export const convertTemperature = (
   }
 
   switch (toUnit) {
-    case "fahrenheit":
+    case TemperatureUnit.Fahrenheit:
       return celsius * (9 / 5) + 32;
-    case "kelvin":
+    case TemperatureUnit.Kelvin:
       return celsius + 273.15;
-    case "rankine":
+    case TemperatureUnit.Rankine:
       return (celsius + 273.15) * (9 / 5);
-    case "celsius":
+    case TemperatureUnit.Celsius:
       return celsius;
     default:
       throw new Error(`Unsupported temperature unit: ${toUnit}`);
   }
 };
 
-/**
- * Converts volumes between liters, tablespoons, cubic-inches, cups, cubic-feet, and gallons.
- * @param {number} value - The volume value to convert.
- * @param {string} fromUnit - The unit of the input volume.
- * @param {string} toUnit - The unit for the output volume.
- * @return {number} - The converted volume value.
- */
 export const convertVolume = (
   value: number,
-  fromUnit: string,
-  toUnit: string
+  fromUnit: VolumeUnit,
+  toUnit: VolumeUnit
 ): number => {
   let liters: number;
 
   switch (fromUnit) {
-    case "tablespoons":
+    case VolumeUnit.Tablespoons:
       liters = value * 0.0147867648;
       break;
-    case "cubicInches":
+    case VolumeUnit.CubicInches:
       liters = value * 0.016387064;
       break;
-    case "cups":
+    case VolumeUnit.Cups:
       liters = value * 0.236588237;
       break;
-    case "cubicFeet":
+    case VolumeUnit.CubicFeet:
       liters = value * 28.3168466;
       break;
-    case "gallons":
+    case VolumeUnit.Gallons:
       liters = value * 3.78541178;
       break;
-    case "liters":
+    case VolumeUnit.Liters:
       liters = value;
       break;
     default:
       throw new Error(`Unsupported volume unit: ${fromUnit}`);
   }
-  
+
   switch (toUnit) {
-    case "tablespoons":
+    case VolumeUnit.Tablespoons:
       return liters / 0.0147867648;
-    case "cubicInches":
+    case VolumeUnit.CubicInches:
       return liters / 0.016387064;
-    case "cups":
+    case VolumeUnit.Cups:
       return liters / 0.236588237;
-    case "cubicFeet":
+    case VolumeUnit.CubicFeet:
       return liters / 28.3168466;
-    case "gallons":
+    case VolumeUnit.Gallons:
       return liters / 3.78541178;
-    case "liters":
+    case VolumeUnit.Liters:
       return liters;
     default:
       throw new Error(`Unsupported volume unit: ${toUnit}`);
   }
-  
 };
