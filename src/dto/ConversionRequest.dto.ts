@@ -4,5 +4,5 @@ export default interface ConversionRequest {
   inputValue: number;
   inputUnit: Unit;
   targetUnit: Unit;
-  studentAnswer?: number;
+  studentAnswer?: number|string;
 }

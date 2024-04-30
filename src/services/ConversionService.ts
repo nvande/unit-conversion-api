@@ -11,9 +11,9 @@ function isVolumeUnit(unit: Unit): unit is VolumeUnit {
 
 function convert(value: number, inputUnit: Unit, targetUnit: Unit): number {
   if (isTemperatureUnit(inputUnit) && isTemperatureUnit(targetUnit)) {
-    return convertTemperature(value, inputUnit, targetUnit);
+    return toTenThousandths(convertTemperature(value, inputUnit, targetUnit));
   } else if (isVolumeUnit(inputUnit) && isVolumeUnit(targetUnit)) {
-    return convertVolume(value, inputUnit, targetUnit);
+    return toTenThousandths(convertVolume(value, inputUnit, targetUnit));
   }
   throw new Error("Unsupported or mismatched unit conversion types");
 }
@@ -27,6 +27,10 @@ function gradeAnswer(value: number, answer: number): boolean {
 
 function toTenths(value: number): number {
     return Math.round(10*value)/10;  
+}
+
+function toTenThousandths(value: number): number {
+    return Math.round(10000*value)/10000;  
 }
 
 export { convert, gradeAnswer };

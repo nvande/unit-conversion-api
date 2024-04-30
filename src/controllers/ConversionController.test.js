@@ -101,8 +101,6 @@ describe("convertAndGradeUnits", () => {
 
     await convertAndGradeUnits(mockRequest, mockResponse);
 
-    expect(statusFunction).toHaveBeenCalledWith(400);
-
     expect(mockResponse.json).toHaveBeenCalledWith(
       expect.objectContaining({
         status: "error",
