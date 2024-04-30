@@ -10,7 +10,7 @@ To get started, download the repo and in a terminal window run either:
 - `npm run start:dev` to launch the application in Dev (Typescript) mode,
 - or run `npm run build` to compile the Typescript into Javascript and then run `npm run start` to launch the build
 
-Once the application is running locally, it will serve requests at localhost:3000/convert
+Once the application is running locally, it will serve requests at localhost:3000/api/v1/convert
 
 ## Running tests
 
