@@ -9,7 +9,7 @@ describe("GET /", () => {
 });
 
 describe("POST /convert", () => {
-  it("should validate a correct request and call next", async () => {
+  it("should validate a correct request", async () => {
     const response = await request(app).post("/convert").send({
       inputValue: 100,
       inputUnit: "celsius",
