@@ -9,6 +9,6 @@ router.get("/", (_req: Request, res: Response) => {
   res.status(200).send("Unit Conversion API");
 });
 
-router.post("/convert", validateConversionRequest, convertAndGradeUnits);
+router.post("/api/v1/convert", validateConversionRequest, convertAndGradeUnits);
 
 export default router;
